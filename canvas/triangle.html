@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var myTriangle,ctx;
+        window.onload = function(){
+            myCanvas();
+        }
+
+        function myCanvas(){
+            document.body.innerHTML ="<canvas id=\"myTriangle\" width=\"200px\" height=\"200px\">"
+            myTriangle = document.getElementById("myTriangle");
+            if(myTriangle.getContext){
+                ctx = myTriangle.getContext('2d');
+                ctx.fillStyle="#00FFCC"
+                ctx.beginPath();
+                ctx.moveTo(50,50);
+                ctx.lineTo(100,150);
+                ctx.lineTo(170,70);
+                ctx.fill();
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
