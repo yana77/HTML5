@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Range Test</title>
+    <script src="rangeJs.js"></script>
+    <style>
+        .selNode{background-color: aquamarine; width: 200px; height: 50px; color: brown}
+        article{ width: 100%; border-bottom: 1px solid brown; padding-bottom: 10px}
+        .srcSection{ background-color: aquamarine; width: 100px; height: 50px;}
+        .discSection{ background-color: aqua; width: 100px; height: 50px;}
+        .omMouseup{ width: 400px; background-color: aquamarine}
+        b{ font-size: xx-large}
+    </style>
+</head>
+<body>
+<h1> XML DOM - Range Object</h1>
+<article>
+    <h1>selectNode,selectContents</h1>
+    <section id="selNode" class="selNode">
+        element
+    </section>
+    <input type="button" value="Delete Content" onclick="deleteRangeContents(true)">
+    <input type="button" value="Delete Element" onclick="deleteRangeContents(false)">
+</article>
+
+<article>
+    <h1>setStart,setEnd</h1>
+    <section id="myChar">
+        The text is used to delete.
+    </section>
+    <input type="button" onclick="deleteChar()" value="Delete text">
+
+    <h1>setStartBefore,setEndAfter</h1>
+    <section>
+        <table id="myTable" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>one one</td>
+                <td>one one</td>
+                <td>one one</td>
+                <td>one one</td>
+            </tr>
+            <tr>
+                <td>two two</td>
+                <td>two two</td>
+                <td>two two</td>
+                <td>two two</td>
+            </tr>
+        </table>
+        <input type="button" onclick="deleteRows()" value="Delete Rows">
+    </section>
+</article>
+
+<article>
+    <h1>cloneRange()</h1>
+    <p id="myText">Hello World.</p>
+    <input type="button" value="cloneRange" onclick="cloneRange()">
+</article>
+
+<article>
+    <h1>cloneContents</h1>
+    <section id="cloContent">Hello World.</section>
+    <input type="button" value="clone" onclick="cloContents()">
+</article>
+
+<article>
+    <h1>extractContents()</h1>
+    <section id="srcSection" class="srcSection">hello,today is fine day.</section>
+    <section id="discSection" class="discSection"></section>
+    <input type="button" value="Move Element" onclick="moveContents()">
+</article>
+
+<article>
+    <h1>鼠标点击字体</h1>
+    <section onmouseup="onMouseUp()" class="omMouseup">
+        Create art. even if you're not an artist.
+    </section>
+    <input type="button" id="btn" value="button">
+</article>
+
+<article>
+    <h1>鼠标选取对比与粗体字的前后位置</h1>
+    If you do not <b id="blodTest">leave</b> me, we will die together.
+    <input type="button" value="button" onclick="testPlace()">
+</article>
+
+<article>
+    <h1>range对象选取内容段</h1>
+    <input type="button" value="button" onclick="rangeTest()">
+    <section id="showRange"></section>
+</article>
+</body>
+</html>
