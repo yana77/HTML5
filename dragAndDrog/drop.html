@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>drag and drop</title>
+</head>
+<style>
+    #dog{ width:230px; height:230px; border:1px solid brown}
+    #dog2{ width:230px; height:230px; border:1px solid brown}
+</style>
+<script>
+    function allowDrop(ev){
+        ev.preventDefault();
+    }
+    function drag(ev){
+        ev.dataTransfer.setData("Text",ev.target.id)
+    }
+    function drop(ev){
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+    </script>
+    <body>
+    <p>hello drag and drop </p>
+    <section id="dog" ondrop="drop(event)" ondragover="allowDrop(event)"></section>
+    <br>
+    <img src="bcc93f49gw1f13eqstd72g206d06d4qr.gif" id="drag1" ondrag="drag()" ondragstart="drag(event)" draggable="true">
+    <section id="dog2" ondrop="drop(event)" ondragover="allowDrop(event)"></section>
+</body>
+</html>
