@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    window.onload = function(){
+        createFillStroke();
+    }
+    function createFillStroke(){
+        document.body.innerHTML = "<canvas id=\"myFillStroke\" width=\"400px\" height=\"400px\">"
+        var myFillStroke= document.getElementById("myFillStroke");
+        if(myFillStroke.getContext){
+            var ctx = myFillStroke.getContext('2d');
+
+            //填充三角形
+            ctx.fillStyle="#00FFCC";
+            ctx.beginPath();
+            ctx.moveTo(50,50);
+            ctx.lineTo(100,100);
+            ctx.lineTo(50,100);
+            ctx.fill();
+
+            //描边三角形
+            ctx.strokeStyle="green";
+            ctx.beginPath();
+            ctx.moveTo(120,50);
+            ctx.lineTo(180,100);
+            ctx.lineTo(120,180);
+            ctx.closePath();
+            ctx.stroke();
+        }
+    }
+</script>
+<body>
+
+</body>
+</html>
