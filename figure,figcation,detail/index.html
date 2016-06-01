@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!--figure-->
+    <figure>
+        <img src="hello.jpg" alt="The cat" width="300px" height="400px">
+    </figure>
+    <!--figcaption-->
+    <figure>
+        <img src="hello.jpg" alt="The cat" width="300px" height="400px">
+        <figcaption>A cheeky macaque, Lower Kintaganban River, Borneo. Original by <a href="http://www.flickr.com/photos/rclark/">Richard Clark</a></figcaption>
+    </figure>
+    </figure>
+
+<details>
+    <summary>While there may be reasons in life to focus on just survival, to fully live, you must thrive!</summary>
+    <p>Create art,even if you're not an artist!</p>
+    <p>Love boldly.</p>
+    <p></p>
+</details>
+    <script>
+        function detail_onclick(detail){
+            var p = document.getElementById("p");
+            if(detail.open){
+                p.style.visibility = "hidden";
+            }else{
+                p.style.visibility = "visible";
+            }
+        }
+    </script>
+<details id="detail" onclick="detail_onclick(this)">
+    <summary>Do something special,make others feel important.</summary>
+    <p id="p" style="visibility: hidden">Create beauty in thought and deed as well as creating beautiful.</p>
+</details>
+
+<p>Do not forget to buy <mark>milk</mark> today.</p>
+
+</body>
+</html>
