@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function draw(id){
+            var myCanvas = document.getElementById(id);
+            if(myCanvas==null){
+                return false;
+            }
+            var ctx = myCanvas.getContext('2d');
+            ctx.fillStyle="#F0F8FF";
+            ctx.fillRect(0,0,700,800);
+            for(var i = 0 ; i <=10; i++){
+                ctx.beginPath();
+                ctx.arc(350,i*25,i*10,0,Math.PI*2,true);
+                ctx.fillStyle="rgba(178,34,34,0.5)";
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+    </script>
+</head>
+<body onload="draw('myCanvas')">
+    <canvas id="myCanvas" width="700px" height="800px"></canvas>
+</body>
+</html>
