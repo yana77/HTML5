@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flower</title>
+    <script>
+        function draw(id){
+            var myCanvas =document.getElementById(id);
+            var cxt = myCanvas.getContext('2d');
+            cxt.fillStyle = "#AFEEEE";
+            cxt.fillRect(0,0,300,400);
+            var xx = 150;
+            var yy = 200;
+            var s =100;
+            cxt.beginPath();
+            cxt.fillStyle="#DDA0DD";
+            cxt.strokeStyle="#EEE8AA";
+            var dig = Math.PI/15*13;
+            for( var i=0; i <30; i++){
+                var x = Math.sin(i*dig);
+                var y = Math.cos(i*dig);
+                cxt.lineTo(xx+x*s,yy+y*s);
+            }
+            cxt.closePath();
+            cxt.fill();
+            cxt.stroke();
+        }
+    </script>
+</head>
+<body onload="draw('MyCanvas')">
+<canvas id="MyCanvas" width="800px" height="800px"></canvas>
+</body>
+</html>
