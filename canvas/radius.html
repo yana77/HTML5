@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>radius</title>
+    <script>
+        var ctx;
+        window.onload = function () {
+            createRadius();
+            myAngle();
+            myRadius()
+        }
+        function createRadius(){
+            document.body.innerHTML="<canvas id=\"myRadius\" width=\"900px\" height=\"900px\">";
+            var myRadius =document.getElementById("myRadius");
+            ctx = myRadius.getContext('2d');
+        }
+        function myRadius(){
+            for(var  i=0;i<7;i++){
+                for(var j=0;j<7;j++){
+                    ctx.fillStyle="wheat";
+                    ctx.strokeStyle="OliveDrab";
+                    ctx.beginPath();
+                    var x = 20 + 35*i ;
+                    var y = 20 + 35*j ;
+                    var radius = 15;
+                    var startAngle = 0 ;
+                    var endAngle = Math.PI*2;
+
+                    ctx.arc(x,y,radius,startAngle,endAngle);
+
+                    if(i%2 ==0){
+                        ctx.fill();
+                    }else{
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+        function myAngle(){
+            for(var i=0; i<5; i++){
+                for(var j=0; j<5; j++){
+                    ctx.fillStyle="Crimson";
+                    ctx.strokeStyle="PaleVioletRed";
+                    ctx.beginPath();
+                    var x = 400 + 80*i;
+                    var y = 200 + 80*j;
+                    var radius = 40;
+                    var startAngle =0;
+                    var endAngle = Math.PI + (Math.PI*j)/2;
+                    var anticlockwise = i%2==0?false:true;
+
+                    ctx.arc(x,y,radius,startAngle,endAngle,anticlockwise);
+
+                    if(j%2==0){
+                        ctx.stroke();
+                    }else{
+                        ctx.fill();
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
