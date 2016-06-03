@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>color</title>
+    <script>
+        var myCanvas,ctx;
+
+        window.onload = function(){
+            createCanvas()
+            createFill();
+            createStroke();
+            createAlpha();
+            createLineHeight();
+        }
+        function createCanvas(){
+            document.body.innerHTML="<canvas id=\"myCanvas\" width=\"800px\" height=\"800px\">"
+            myCanvas = document.getElementById("myCanvas");
+            ctx = myCanvas.getContext('2d');
+        }
+        function createFill(){
+            for( var i = 0 ; i <=7; i++){
+                for ( var j=0; j<=7; j++){
+                    ctx.fillStyle='rgba(' + Math.floor(255-15.5*i) + ',0,0,0.5)';
+                    ctx.beginPath();
+                    ctx.arc(15+15*i,15+15*j,10,0,Math.PI*2,true);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+            }
+        }
+        function createStroke(){
+            for(var i=0; i<7; i++){
+                for(var j=0; j<=i; j++){
+                    ctx.strokeStyle='rgb(0,'+Math.floor(255-30*i)+','+Math.floor(255-10*j)+')';
+                    ctx.strokeRect(200+10*i,10+10*j,60,60);
+                }
+            }
+        }
+        function createAlpha(){
+            for (var i = 0;i<7; i++){
+                if(i%2==0){
+                    ctx.fillStyle="#f391a9";
+                    ctx.fillRect(400,10+20*i,200,20);
+                }else{
+                    ctx.fillStyle="#d71345";
+                    ctx.fillRect(400,10+20*i,200,20);
+                }
+            }
+            ctx.globalAlpha = 0.3;
+            for(var j = 0 ; j<4; j++){
+                ctx.fillStyle="#ffffff";
+                ctx.fillRect(400+50*j,10,20,140);
+            }
+        }
+
+        function createLineHeight(){
+            for(var i = 0; i < 10; i++){
+                ctx.lineWidth = 1 + i;
+                ctx.beginPath();
+                ctx.moveTo(650+i*10, 10);
+                ctx.lineTo(650+i*10, 200);
+                ctx.stroke();
+
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
