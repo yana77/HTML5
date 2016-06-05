@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var myLineDash,ctx;
+        var offset = 0;
+
+    window.onload = function(){
+        createLineDash();
+        march();
+        myRect();
+    }
+        function createLineDash() {
+            document.body.innerHTML = "<canvas id=\"myLineDash\" width=\"800px\" height=\"800px\">"
+            myLineDash = document.getElementById("myLineDash");
+            ctx = myLineDash.getContext('2d');
+        }
+        function myDraw(){
+            ctx.clearRect(0,0,600,600);
+            ctx.setLineDash([4,2]);
+            ctx.strokeStyle = "green";
+            ctx.lineDashOffset = -offset;
+            ctx.strokeRect(10,10,200,200);
+
+            ctx.beginPath();
+            ctx.lineDashOffset = offset;
+            ctx.moveTo(10,10);
+            ctx.lineTo(210,210);
+            ctx.closePath();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(10,210);
+            ctx.lineTo(210,10);
+            ctx.closePath();
+            ctx.stroke();
+
+            ctx.strokeStyle ="red";
+            for ( var i = 0; i<=7; i++){
+
+                    ctx.lineDashOffset = offset;
+
+                ctx.strokeRect(450-25*i,200-25*i,50+20*i,50+20*i);
+            }
+
+        }
+       /* function myRect(){
+            ctx.clearRect(300,0,300,300);
+            ctx.setLineDash([4,2]);
+            ctx.strokeStyle = "red";
+
+            for ( var i = 0; i<=7; i++){
+                if(offset%2==0){
+                 ctx.lineDashOffset = -offset;
+                }
+                ctx.strokeRect(450-25*i,200-25*i,50+20*i,50+20*i);
+            }
+        }*/
+        function march(){
+            offset++;
+            if(offset > 16){
+                offset = 0;
+            }
+            myDraw();
+            setTimeout(march,20);
+        }
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>
