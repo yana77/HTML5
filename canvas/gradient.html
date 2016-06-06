@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function(){
+            createGradient();
+            act();
+        }
+        function createGradient() {
+            document.body.innerHTML = "<canvas id=\"myAct\" width=\"800px\" height=\"800px\">"
+            myAct = document.getElementById("myAct");
+            ctx = myAct.getContext('2d');
+        }
+        function act(){
+            var act1=ctx.createRadialGradient(85,85,25,92,92,50);
+            act1.addColorStop(0,"#FFEC8B");
+            act1.addColorStop(0.9,"#FFD700");
+            act1.addColorStop(1,'rgba(254,244,148,0)');
+
+            var act2 = ctx.createRadialGradient(100,160,30,110,170,50);
+            act2.addColorStop(0,"#FFE1FF");
+            act2.addColorStop(0.7,"#FFBBFF");
+            act2.addColorStop(1,'rgba(253,135,248,0)');
+
+            var act3 = ctx.createRadialGradient(115,235,35,125,245,53);
+            act3.addColorStop(0,"#BBFFFF");
+            act3.addColorStop(0.7,"#8DEEEE");
+            act3.addColorStop(1,'rgba(167,206,219,0)');
+
+            ctx.fillStyle=act1;
+            ctx.fillRect(0,0,200,200);
+            ctx.fillStyle=act2;
+            ctx.fillRect(10,10,200,300);
+            ctx.fillStyle=act3;
+            ctx.fillRect(10,10,200,600);
+
+
+            ctx.strokeStyle="#EEE9BF";
+            ctx.beginPath();
+            ctx.lineWidth=10;
+            ctx.moveTo(135,293);
+            ctx.lineTo(160,400);
+            ctx.closePath();
+            ctx.stroke();
+
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
