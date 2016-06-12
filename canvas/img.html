@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片效果</title>
+    <script>
+        var myImages,ctx,img;
+
+        window.onload = function(){
+            createCanvas();
+            draw1();
+        }
+        function createCanvas(){
+            document.body.innerHTML="<canvas id=\"myImages\" width=\"800px\" height=\"800px\">"
+            myImages= document.getElementById("myImages");
+            ctx = myImages.getContext('2d');
+
+
+            img = new Image();
+        }
+        function draw1() {
+            img.onload = function () {
+               /* for(var i=0; i<6; i++){
+                    for(var j=0;j<6;j++){
+                        ctx.drawImage(img,j*50,i*50,50,50);
+                    }
+                }*/
+
+                ctx.drawImage(img, 100, 20, 300, 300, 21, 100, 300, 300)
+            }
+            img.src='222.gif';
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
