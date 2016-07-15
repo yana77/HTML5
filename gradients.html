@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gradients</title>
+    <style>
+        #grad1{
+            height: 100px;
+            width: 600px;
+            background:-webkit-linear-gradient(darkseagreen,khaki);
+            background: -o-linear-gradient(darkseagreen,khaki);
+            background: -moz-linear-gradient(darkseagreen,khaki);
+            background: linear-gradient(darkseagreen,khaki);/*Standard syntax*/
+        }
+        #grad2{
+            height: 100px; width: 600px;
+            background: -webkit-linear-gradient(left,darkseagreen,khaki);
+            background:-moz-linear-gradient(right,darkseagreen,khaki);
+            background: -o-linear-gradient(right,darkseagreen,khaki);
+            background: linear-gradient(to right,darkseagreen,khaki);/*Standard syntax*/
+        }
+        #grad3{
+            height: 100px; width: 600px;
+            background:  darkseagreen;/*For browsers that do not support gradients*/
+            background: -webkit-linear-gradient(left top,darkseagreen,khaki);
+            background: -o-linear-gradient(bottom right,darkseagreen,khaki);
+            background: -moz-linear-gradient(bottom right,darkseagreen,khaki);
+            background: linear-gradient(to bottom right,darkseagreen,khaki);/*Standard syntax*/
+        }
+        #grad4{
+                     height: 100px; width: 600px; color: white; font-size: 24px; font-weight: bold;
+                     background: darkseagreen; /*For browser do not support gradient*/
+                     background: -webkit-linear-gradient(0deg,darkseagreen,khaki);
+                     background: -o-linear-gradient(0deg,darkseagreen,khaki);
+                     background: -moz-linear-gradient(0deg,darkseagreen,khaki);
+                     background: linear-gradient(0deg,darkseagreen,khaki);
+                 }
+        #grad5{
+            height: 100px; width: 600px; color: white; font-size: 24px; font-weight: bold;
+            background: darkseagreen; /*For browser do not support gradient*/
+            background: -webkit-linear-gradient(90deg,darkseagreen,khaki);
+            background: -o-linear-gradient(90deg,darkseagreen,khaki);
+            background: -moz-linear-gradient(90deg,darkseagreen,khaki);
+            background: linear-gradient(90deg,darkseagreen,khaki);
+        }
+        #grad6{
+            height: 100px; width: 600px; color: white; font-size: 24px; font-weight: bold;
+            background: darkseagreen; /*For browser do not support gradient*/
+            background: -webkit-linear-gradient(180deg,darkseagreen,khaki);
+            background: -o-linear-gradient(180deg,darkseagreen,khaki);
+            background: -moz-linear-gradient(180deg,darkseagreen,khaki);
+            background: linear-gradient(180deg,darkseagreen,khaki);
+        }
+        #grad7{
+            height: 100px; width: 600px; color: white; font-size: 24px; font-weight: bold;
+            background: darkseagreen; /*For browser do not support gradient*/
+            background: -webkit-linear-gradient(-90deg,darkseagreen,khaki);
+            background: -o-linear-gradient(-90deg,darkseagreen,khaki);
+            background: -moz-linear-gradient(-90deg,darkseagreen,khaki);
+            background: linear-gradient(-90deg,darkseagreen,khaki);
+        }
+        #grad8{
+            height: 300px; width: 600px;
+            background:darkseagreen;
+            background: -webkit-radial-gradient(darkseagreen,khaki,royalblue);
+            background: -o-radial-gradient(darkseagreen,khaki,royalblue);
+            background: -moz-radial-gradient(darkseagreen,khaki,royalblue);
+            background: radial-gradient(darkseagreen,khaki,royalblue);
+        }
+        #grad9{
+            height: 300px; width: 600px;
+            background:darkseagreen;
+            background: -webkit-radial-gradient(circle,darkseagreen,khaki,royalblue);
+            background: -o-radial-gradient(circle,darkseagreen,khaki,royalblue);
+            background: -moz-radial-gradient(circle,darkseagreen,khaki,royalblue);
+            background: radial-gradient(circle,darkseagreen,khaki,royalblue);
+        }
+        #grad13{
+            height: 300px; width: 300px;
+            background: cornflowerblue;
+            background: -webkit-radial-gradient(50% 50%,farthest-corner,firebrick,yellow,black);
+            background: -o-radial-gradient(50% 50%,farthest-corner,firebrick,yellow,black);
+            background: -moz-radial-gradient(50% 50%,farthest-corner,firebrick,yellow,black);
+            background: radial-gradient(50% 50%,farthest-corner,firebrick,yellow,black);
+        }
+        #grad12{
+            height: 300px; width: 300px;
+            background: cornflowerblue;
+            background: -webkit-radial-gradient(50% 50%,closest-corner,firebrick,yellow,black);
+            background: -o-radial-gradient(50% 50%,closest-corner,firebrick,yellow,black);
+            background: -moz-radial-gradient(50% 50%,closest-corner,firebrick,yellow,black);
+            background: radial-gradient(50% 50%,closest-corner,firebrick,yellow,black);
+        }
+        #grad10{
+            height: 300px; width: 300px;
+            background: cornflowerblue;
+            background: -webkit-radial-gradient(50% 50%,closest-side,firebrick,yellow,black);
+            background: -o-radial-gradient(50% 50%,closest-side,firebrick,yellow,black);
+            background: -moz-radial-gradient(50% 50%,closest-side,firebrick,yellow,black);
+            background: radial-gradient(50% 50%,closest-side,firebrick,yellow,black);
+        }
+        #grad11{
+            height: 300px; width: 300px;
+            background: cornflowerblue;
+            background: -webkit-radial-gradient(50% 50%,farthest-side,firebrick,yellow,black);
+            background: -o-radial-gradient(50% 50%,farthest-side,firebrick,yellow,black);
+            background: -moz-radial-gradient(50% 50%,farthest-side,firebrick,yellow,black);
+            background: radial-gradient(50% 50%,farthest-side,firebrick,yellow,black);
+        }
+    </style>
+</head>
+<body>
+<h3>Linear Gradient - To to Bottom</h3>
+<p>This linear gradient starts at the top.It starts darkseagreen,transitioning to khaki:</p>
+<div id="grad1"></div>
+
+<h3>Linear Gradient - Left to Right</h3>
+<p>This linear gradient starts at the left.It starts darkseagreen,transitioning to khaki:</p>
+<div id="grad2"></div>
+
+<h3>Linear Gradient - Diagonal</h3>
+<p>This linear gradient starts at top left.It starts  darkseagreen,transitioning to khaki</p>
+<div id="grad3"></div>
+
+<h3>Linear Gradient - Using Different Angles</h3>
+<div id="grad4">0deg</div>
+<br>
+<div id="grad5">90deg</div>
+<br>
+<div id="grad6">180deg</div>
+<br>
+<div id="grad7">-90deg</div>
+
+<h3>Radial Gradient - Evenly Spaced Color Stops</h3>
+<div id="grad8"></div>
+
+<h3>Radial Gradient - Shapes</h3>
+<div id="grad9"></div>
+
+<h3>Radial Gradient - Use of different size keywords</h3>
+<h2>closest-side</h2>
+<div id="grad10"></div>
+<h2>farthest-side</h2>
+<div id="grad11"></div>
+<h2>closest-corner</h2>
+<div id="grad12"></div>
+<h2>farthest-corner</h2>
+<div id="grad13"></div>
+</body>
+</html>
